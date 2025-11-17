@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --footer-bg: #111315;
+            --footer-border: rgba(255, 255, 255, 0.18);
+            --footer-muted: #bfc1c5;
+            --footer-white: #f7f7f7;
+            --footer-link: #5eb7ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Urbanist", Arial, sans-serif;
+            background: #ffffff;
+        }
+
+        .acg-footer {
+            background: var(--footer-bg);
+            color: var(--footer-white);
+            padding: 10px 0 0px;
+            letter-spacing: 0.2px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .acg-footer a {
+            color:#ffffffde;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .ineer-container.text-left {
+            padding-left: 90px;
+        }
+
+        .acg-footer a:hover,
+        .acg-footer a:focus {
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            width: 130px;
+            margin-bottom: 18px;
+        }
+
+        .footer-section h5 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: var(--footer-white);
+        }
+
+        .footer-section ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 9px;
+            font-size: 13px;
+            color: var(--footer-muted);
+        }
+
+        .footer-section ul li a {
+            color:#ffffffde;
+        }
+        .footer-contact {
+            color:inherit;
+        }
+        .footer-address {
+            font-size: 13px;
+            color: var(--footer-muted);
+            line-height: 1.8;
+            margin-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .footer-address-link {
+            color: var(--footer-muted);
+            /* text-decoration: underline; */
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .footer-contact a {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 400;
+            color:#ffffffde;
+        }
+
+        .footer-contact .footer-email {
+            /* text-decoration: underline; */
+            color:#ffffffde;
+        }
+
+        .footer-social-icons a {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 1.5px solid var(--footer-white);
+                    display: inline-flex
+                ;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 8px;
+                    color: var(--footer-white);
+                    font-size: 14px;
+                    transition: background 0.2s 
+                ease, color 0.2s 
+                ease;
+                }
+
+        .footer-social-icons a:last-child {
+            margin-right: 0;
+        }
+
+        .footer-social-icons a:hover {
+            background: var(--footer-white);
+            color: #111315;
+        }
+
+        .btn-footer {
+            border: 1.7px solid #2a9df4;
+            border-radius: 999px;
+            padding: 8px 28px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1F9AD6 !important;
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-footer:hover {
+            background: #2a9df4;
+            color: #0c1219 !important;
+        }
+
+        .footer-cta {
+            margin-top: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgb(255 255 255 / 56%);
+            margin-top: 10px;
+            padding-top: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color:#ffffffde;
+            padding-top: 10px;
+        }
+
+        .footer-desktop,
+        .footer-bottom-desktop {
+            display: none;
+        }
+
+        /* Mobile */
+        .footer-mobile {
+            display: block;
+            max-width: 420px;
+            margin: 28px auto 0;
+            padding: 36px 24px 22px;
+            text-align: center;
+            background: #0f1113;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+        }
+
+        .footer-mobile .footer-logo {
+            width: 160px;
+            margin: 0 auto 26px;
+        }
+
+        .footer-mobile .footer-contact {
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .footer-mobile .footer-contact a {
+            font-size: 16px;
+            font-weight: 500;
+            color:#ffffff;
+            margin-bottom: 8px;
+        }
+
+        .footer-mobile .footer-address {
+            font-size: 15px;
+            line-height: 1.8;
+            color:#ffffff;
+            margin: 18px 0 22px;
+        }
+
+        .footer-mobile .footer-address span {
+            display: block;
+        }
+
+        .footer-mobile .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .footer-mobile .footer-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--footer-white);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--footer-white);
+            font-size: 18px;
+        }
+
+        .footer-mobile .footer-cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            margin: 0 auto;
+            padding: 10px 0;
+            border-radius: 999px;
+            border: 1.7px solid #0d8de0;
+            color: var(--footer-white);
+            font-weight: 600;
+        }
+
+        .footer-mobile .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--footer-border);
+            margin: 28px 0 16px;
+        }
+
+        .footer-mobile .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgb(255 255 255);
+            border-bottom: 1px solid rgb(255 255 255);
+        }
+
+        .footer-mobile .footer-nav a {
+            padding: 14px 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--footer-white);
+            border-right: 1px solid rgb(255 255 255);
+        }
+
+        .footer-mobile .footer-nav a:last-child {
+            border-right: none;
+        }
+        @media (max-width: 991px) {
+            .ineer-container.text-left {
+                padding-left: 5px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-desktop,
+            .footer-bottom-desktop {
+                display: block;
+                padding-top: 15px;
+                padding-bottom: 35px;
+            }
+
+            .footer-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .footer-desktop,
+            .footer-bottom-desktop {
+                display: none;
+            }
+
+            .footer-bottom {
+                justify-content: center;
+            }
+
+            .footer-social-icons a {
+                margin-right: 10px;
+            }
+
+            .footer-cta {
+                text-align: center;
+            }
+            .container{
+                width:100%;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .footer-mobile {
+                
+            padding: 36px 0px 22px;
+                max-width: 100% !important;
+            }
+            .footer-mobile .footer-divider {
+                    height: 0px;
+                   
+                }
+                .footer-copy{
+                    padding-top: 33px;
+                    font-size: 18px;
+                    color: #ffffff;
+                }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<footer class="acg-footer">
+    <div class="container">
+        <div class="row footer-desktop">
+
+            <div class="col-sm-5 footer-section text-center">
+                <div class="ineer-container text-left">
+                    <img src="ACG_logo.png" class="footer-logo" alt="Australian Cruise Group">
+                    <p class="footer-address">
+                        <a class="footer-address-link" target="_blank" rel="noopener"
+                            href="https://maps.google.com/?q=32+The+Promenade,+King+Street+Wharf,+Sydney,+NSW+2000,+Australia">
+                            32 The Promenade, King Street Wharf<br>
+                            Sydney, NSW 2000, Australia
+                        </a>
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:+61282967351">(+612) 8296 7351</a>
+                        <a href="mailto:book@australiancruisegroup.com.au"
+                            class="footer-email">book@australiancruisegroup.com.au</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="col-sm-4 footer-section">
+                    <h5>Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Guest Comments</a></li>
+                        <li><a href="#">Leadership Team</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-sm-4 footer-section">
+                    <h5>Terms Of Use</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Legal Information</a></li>
+                        <li><a href="#">Terms Of Services</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 footer-section">
+                    <div class="footer-cta text-right">
+                        <a href="#" class="btn btn-footer">Agent Portal</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="footer-bottom footer-bottom-desktop">
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="footer-social-icons">
+                                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <p class="footer-copy">© 2025 Australian Cruise Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+     
+
+        <div class="footer-mobile">
+            <img src="ACG_logo.png" class="footer-logo" alt="Australian Cruise Group">
+
+            <div class="footer-contact">
+                <a href="tel:+61282967351">(+612) 8296 7351</a>
+                <a href="mailto:book@australiancruisegroup.com.au"
+                    class="footer-email">book@australiancruisegroup.com.au</a>
+            </div>
+
+            <p class="footer-address">
+                <span>32 The Promenade, King Street Wharf</span>
+                <span>Sydney, NSW 2000, Australia</span>
+            </p>
+
+            <div class="footer-social" aria-label="Follow us">
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+            <div class="footer-cta footer-mobile-cta">
+                <a href="#" class="btn btn-footer">Agent Portal</a>
+            </div>
+
+            <div class="footer-divider" role="separator" aria-hidden="true"></div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#">About Us</a>
+                <a href="#">Blogs</a>
+                <a href="#">Terms of Use</a>
+            </nav>
+
+            <p class="footer-copy text-center">© 2025 Australian Cruise Group</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+
+</html>
